@@ -17,5 +17,13 @@ $(function()
     $(document).on('click', '#polozeno',function(){
         $(this).css('background', 'blue');
     });
+   
+        $("#pretrazi").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#podatci tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      
 });
 
